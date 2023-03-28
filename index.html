@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Video Player</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1><span>Lecteur</span> Vidéo Personnalisé</h1>
+        <div class="video-container">
+            <video src="./ressources/video.mp4"></video>
+                    <div class="play-pause-icon">
+                        <img src="./ressources/play.svg" alt="play" />
+                    </div>
+                    <div class="video-controls">
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <div class="actions">
+                            <div class="actions-left">
+                                <button class="btn play-btn">
+                                    <img src="./ressources/play.svg" alt="play"/>
+                                </button>
+                                <div class="volume">
+                                    <button class="btn volume-btn">
+                                        <img class="volume-icon" src="./ressources/unmute.svg" alt="play" />
+                                    </button>
+                                    <input class="volume-range" type="range" min="0" max="100"/>
+                                </div>
+                                <p class="time"><span class="current-time">0:00</span>/<span class="duration">0:00</span></p>
+                            </div>
+                            <div class="actions-right">
+                                <button class="btn fullscreen-btn">
+                                    <img src="./ressources/fullscreen.svg" alt="fullscreen" />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+</body>
+</html>

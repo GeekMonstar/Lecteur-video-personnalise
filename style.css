@@ -1,0 +1,145 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+  background: #d1d1d1;
+  padding-top: 50px;
+}
+.container{
+  width: 100%;
+  margin: 0 auto;
+}
+h1{
+  font-size: calc(10px 2vw 102px);
+  width: fit-content;
+  margin: 0 auto;
+  font-weight: 400;
+}
+span{
+  font-weight: 600;
+}
+.video-container{
+  /* width: 1107px;
+  height: 623px; */
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.video-canvas{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.video-canvas-container{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.video-controls{
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  transform: translateY(100%);
+  bottom: 0;
+  padding: 0 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+video{
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: top;
+  z-index: 2;
+}
+.play-pause-icon{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
+.play-pause-icon img{
+  height: 30px;
+}
+.progress{
+  width: 100%;
+  height: 5px;
+  background-color: white;
+  cursor: pointer;
+}
+.progress-bar{
+  position: relative;
+  width: 0;
+  height: 100%;
+  background-color: red;
+}
+.progress:hover .progress-bar::before{
+  content: '';
+  position: absolute;
+  transform: translate(50%, -50%);
+  top: 50%;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red;
+}
+.actions{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+.actions-left{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.btn{
+  background: transparent;
+  padding: 8px;
+  border: 0;
+}
+.btn img{
+  height: 30px;
+}
+.volume{
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.volume-btn{
+  transform: scale(.7);
+}
+.volume .volume-range {
+  display: none;
+  width: 70px;
+}
+.volume:hover .volume-range{
+  display: block;
+}
+@media (min-width: 768px) {
+  .video-container{
+    width: 90%;
+  }
+}
+@media (min-width: 1024px) {
+  .video-container {
+      width: 70%;
+    }
+}
+
