@@ -9,13 +9,28 @@ const progressContainer = document.querySelector('.progress');
 const progressBar = document.querySelector('.progress-bar');
 const currentTimeTxt = document.querySelector('.current-time');
 const duationTxt = document.querySelector('.duration');
+const fullScreenBtn = document.querySelector('.fullscreen-btn');
 
 playBtn.addEventListener('click', handlePlayPause);
 videoPlayer.addEventListener('timeupdate', handleProgress);
 videoPlayer.addEventListener('click', handlePlayPauseWhithScreen);
 volumeSlide.addEventListener('input', handleVolumeChange);
 volumeBtn.addEventListener('click', handleMute);
-progressContainer.addEventListener('click', setProgress)
+progressContainer.addEventListener('click', setProgress);
+fullScreenBtn.addEventListener('click', handleFullScreen)
+console.dir(videoPlayer.requestFullscreen)
+
+function handleFullScreen(){
+    if(videoPlayer.requestFullscreen){
+        videoPlayer.requestFullscreen();
+    }
+    else if(videoPlayer.webkitRequestFullscreen){
+        videoPlayer.webkitRequestFullscreen();
+    }
+    else if(videoPlayer.msRequestFullscreen){
+        videoPlayer.msRequestFullscreen();
+    }
+}
 
 function handlePlayPause() {
     console.dir(videoPlayer.paused)
